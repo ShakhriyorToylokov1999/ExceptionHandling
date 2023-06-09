@@ -8,33 +8,26 @@ namespace Task1
         private static void Main(string[] args)
         {
             // TODO: Implement the task here.
-            string inputText="";
-            bool stop = false;
-            
+            string inputText = "";
+
             Console.WriteLine($"Text first letter checker \n " +
                               $"Enter 0 when you want to stop entering texts: ");
-            do
+            while (inputText != "0")
             {
-                Console.Write("Enter text: ");
-                if (inputText!="0")
+                try
                 {
-                    try
-                    {
-                        inputText = Console.ReadLine();
-                        Console.WriteLine("The first char is : " + inputText[0]);
-                    }
-                    catch (IndexOutOfRangeException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
+                    Console.Write("Enter text: ");
+                    inputText = Console.ReadLine();
+
+                    if (inputText == "0") break;
+
+                    Console.WriteLine("The first char is : " + inputText[0]);
                 }
-                else
+                catch (IndexOutOfRangeException ex)
                 {
-                    stop= true;
+                    Console.WriteLine(ex.Message);
                 }
-            } while (!stop);
-
-
+            }
         }
     }
 }
