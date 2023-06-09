@@ -13,14 +13,15 @@ namespace Task2
             {
                 throw new FormatException();
             }
+
             int response = 0;
             bool isNegative = false;
             int count = 0;
+
             foreach (char c in stringValue)
             {
                 count++;
                 if (c == '+')
-
                     continue;
 
                 else if (c == '-')
@@ -37,7 +38,7 @@ namespace Task2
                     try
                     {
                         response *= 10;
-                        if (isNegative && count==stringValue.Length)
+                        if (isNegative && count == stringValue.Length)
                         {
                             response *= -1;
                             response -= c - '0';
@@ -51,7 +52,7 @@ namespace Task2
                         throw ex;
                     }
                 }
-                
+
             }
             if (isNegative)
             {
@@ -69,7 +70,7 @@ namespace Task2
                 {
                     continue;
                 }
-                if ((str[i]>57 || str[i] < 48) && (str[i]!=43 && str[i] != 45) || (i!=0 && (str[i]==45 || str[i] == 43)))
+                if ((str[i] > 57 || str[i] < 48) && (str[i] != 43 && str[i] != 45) || (i != 0 && (str[i] == 45 || str[i] == 43)))
                 {
                     return false;
                 }
